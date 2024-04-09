@@ -8,19 +8,21 @@ interface HeroButtonProps {
 interface HeroButtonElementProps {
   children: React.ReactNode;
   className?: string;
+  lang: "am" | "en";
 }
 
 export const HeroPrimaryButton = ({
   children,
   className,
+  lang,
 }: HeroButtonElementProps) => {
   return (
     <Button
-      href="/documentation"
+      href={`/${lang}/docs`}
       variant="primary"
-      size="medium"
+      size="large"
       className={classNames(
-        "translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]",
+        "translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms] text-sm",
         className
       )}
     >
@@ -51,7 +53,7 @@ export const HeroSecondaryButton = ({
 
 export const HeroButton = ({ children }: HeroButtonProps) => {
   return (
-    <section className="flex items-center justify-center pt-20 flex-row space-x-10">
+    <section className="flex items-center justify-center pt-20 flex-row">
       {children}
     </section>
   );

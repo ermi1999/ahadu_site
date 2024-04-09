@@ -15,8 +15,10 @@ export default function AmharicLayout({
   return (
     <html lang="am">
       <body className={noto.className}>
-        <Navbar lang="am" />
-        {children}
+        <main className="bg-page-gradient top-0">
+          <Navbar lang="am" />
+          {children}
+        </main>
       </body>
     </html>
   );

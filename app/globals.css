@@ -13,8 +13,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 212, 80%, 42%;
+    --primary-foreground: 222.2 84% 4.9;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -27,6 +27,9 @@
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
+
+    --glow-lines-color-finish: #7877c6;
+    --glow-lines-color-start: #9d9bf2;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
@@ -64,6 +67,9 @@
 
     --light-white: rgb(180, 188, 208);
 
+    --glow-lines-color-finish: #7877c6;
+    --glow-lines-color-start: #9d9bf2;
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
@@ -88,11 +94,16 @@ html {
 
 /* DEMO-SPECIFIC STYLES */
 .typewriter h1 {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid hsl(var(--primary)); /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: 0.1em; /* Adjust as needed */
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid hsl(var(--primary));
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.05em;
+  /* Adjust as needed */
   animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
 }
 
@@ -101,6 +112,7 @@ html {
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
@@ -112,6 +124,7 @@ html {
   to {
     border-color: transparent;
   }
+
   50% {
     border-color: hsl(var(--primary));
   }

@@ -20,7 +20,6 @@ export default function EnglishLayout({
       <body className={lato.className}>
         <main className="bg-page-gradient top-0">
           <Navbar lang="en" />
-
           {children}
         </main>
       </body>

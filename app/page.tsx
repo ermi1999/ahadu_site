@@ -6,8 +6,8 @@ export default function Home() {
   const lang = localStorage.getItem("lang");
 
   if (lang) {
-    if (lang == "et") {
-      redirect("/et");
+    if (lang == "am") {
+      redirect("/am");
     } else {
       redirect("/en");
     }

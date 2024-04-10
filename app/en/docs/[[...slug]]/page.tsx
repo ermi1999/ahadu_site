@@ -1,4 +1,6 @@
 import { allDocs } from "@/.contentlayer/generated";
+import { Mdx } from "@/components/mdxComponents";
+import { DocsPager } from "@/components/pager";
 import { getTableOfContents } from "@/lib/toc";
 import { absoluteUrl } from "@/lib/utils";
 import { Metadata } from "next";
@@ -11,10 +13,8 @@ interface DocPageProps {
 }
 
 async function getDocFromParams(params: any) {
-  const slug = params.slug?.join("/") || "docs";
-  console.log(slug);
+  const slug = params.slug?.join("/") || "";
   const doc = allDocs.find((doc) => doc.slugAsParams === slug);
-  console.log(doc);
   if (!doc) {
     null;
   }
@@ -52,7 +52,6 @@ export async function generateStaticParams(): Promise<
 }
 
 export default async function EnglishDocPage({ params }: DocPageProps) {
-  console.log(params);
   const doc = await getDocFromParams(params);
   if (!doc) {
     notFound();
@@ -60,8 +59,10 @@ export default async function EnglishDocPage({ params }: DocPageProps) {
 
   const toc = await getTableOfContents(doc.body.raw);
   return (
-    <div>
-      <h1>Page</h1>
-    </div>
+    <article className="md:w-[80%] ml-auto px-4">
+      <h1>{doc.title}</h1>
+      <Mdx code={doc.body.code} />
+      <DocsPager doc={doc} />
+    </article>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 import { SidebarNavItem } from "@/types";
-import { ScrollArea } from "./ui/scroll-area";
+import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 import { usePathname } from "next/navigation";
 import {
   Accordion,
@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "./ui/accordion";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export interface DocsSidebarNavProps {
   items: SidebarNavItem[];
@@ -16,29 +17,29 @@ export interface DocsSidebarNavProps {
 
 export default function DocsSidebarNav({ items }: DocsSidebarNavProps) {
   const pathname = usePathname();
+  const defaultValues = ["Documentation", "Getting Started"];
   return items.length ? (
-    <ScrollArea>
-      <div className="h-full w-full">
+    <ScrollArea type="hover">
+      <Accordion
+        type="multiple"
+        defaultValue={defaultValues}
+        className="h-full w-full"
+      >
         {items.map((item, index) => (
           <div key={index}>
-            <Accordion type="single" collapsible>
-              <AccordionItem value={item.title}>
-                <AccordionTrigger className="mb-1 rounded-md px-2 py-1 text-sm font-medium">
-                  {item.title}
-                </AccordionTrigger>
-                <AccordionContent>
-                  {item.items ? (
-                    <DocsSidebarNavItems
-                      items={item.items}
-                      pathname={pathname}
-                    />
-                  ) : null}
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            <AccordionItem value={item.title} className="border-none">
+              <AccordionTrigger className="mb-1 rounded-md px-2 py-1 text-md font-semibold transition-colors">
+                {item.title}
+              </AccordionTrigger>
+              <AccordionContent className="pl-3">
+                {item.items ? (
+                  <DocsSidebarNavItems items={item.items} pathname={pathname} />
+                ) : null}
+              </AccordionContent>
+            </AccordionItem>
           </div>
         ))}
-      </div>
+      </Accordion>
     </ScrollArea>
   ) : null;
 }
@@ -53,10 +54,19 @@ export function DocsSidebarNavItems({
   pathname,
 }: DocsSidebarNavItemsProps) {
   return items.length ? (
-    <div>
+    <div className="flex flex-col pl-2 border-l border-dotted border-primary-foreground my-2">
       {items.map((item, index) =>
         item.href ? (
-          <Link key={index} href={item.href}>
+          <Link
+            key={index}
+            href={item.href}
+            className={cn(
+              "font-medium text-muted-foreground rounded-sm p-2 hover:text-primary-foreground transition-colors",
+              {
+                "text-primary": item.href === pathname,
+              }
+            )}
+          >
             {item.title}
           </Link>
         ) : (

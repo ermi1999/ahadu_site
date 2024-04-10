@@ -18,7 +18,7 @@ const computedFields = {
 
 export const Doc = defineDocumentType(() => ({
   name: "Doc",
-  filePathPattern: `en/docs/**/*.mdx`,
+  filePathPattern: `docs/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -33,7 +33,7 @@ export const Doc = defineDocumentType(() => ({
 }));
 
 export default makeSource({
-  contentDirPath: "./content",
+  contentDirPath: "./content/en",
   documentTypes: [Doc],
   mdx: {
     remarkPlugins: [remarkGfm],

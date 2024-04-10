@@ -17,12 +17,7 @@ export default function EnglishLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={lato.className}>
-        <main className="bg-page-gradient top-0">
-          <Navbar lang="en" />
-          {children}
-        </main>
-      </body>
+      <body className={lato.className}>{children}</body>
     </html>
   );
 }

@@ -3,7 +3,7 @@ export const docsConfig: DocsConfig = {
   mainNav: [
     {
       title: "Documentation",
-      href: "/docs",
+      href: "/en/docs",
     },
   ],
   sidebarNav: [
@@ -12,11 +12,11 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Introduction",
-          href: "/docs",
+          href: "/en/docs",
         },
         {
           title: "Installation",
-          href: "/docs/installation",
+          href: "/en/docs/installation",
         },
       ],
     },
@@ -25,19 +25,19 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Variables",
-          href: "/docs/variables",
+          href: "/en/docs/variables",
         },
         {
           title: "Functions",
-          href: "/docs/functions",
+          href: "/en/docs/functions",
         },
         {
           title: "Classes",
-          href: "/docs/classes",
+          href: "/en/docs/classes",
         },
         {
           title: "Built in functions",
-          href: "/docs/built-in-functions",
+          href: "/en/docs/built-in-functions",
         },
       ],
     },

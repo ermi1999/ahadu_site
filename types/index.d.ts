@@ -11,10 +11,14 @@ export type SidebarNavItem = {
   | {
       href: string;
       items?: never;
+      next?: string | null;
+      prev?: string | null;
     }
   | {
       href?: string;
       items: NavLink[];
+      next?: string | null;
+      prev?: string | null;
     }
 );
 

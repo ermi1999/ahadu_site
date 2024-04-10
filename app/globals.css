@@ -76,6 +76,11 @@
   }
 }
 
+@font-face {
+  font-family: "iaWriterMono";
+  src: url("/fonts/ia_writer_mono/iAWriterMonoS-Regular.ttf") format("ttf");
+}
+
 @layer base {
   * {
     @apply border-border;

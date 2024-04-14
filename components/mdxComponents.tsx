@@ -1,6 +1,15 @@
 import { cn } from "@/lib/utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
+import {
+  MdxH1,
+  MdxH2,
+  MdxH3,
+  MdxH4,
+  MdxH5,
+  MdxH6,
+} from "@/components/mdxHeading";
+import Pre from "./pre";
 
 interface MdxProps {
   code: string;
@@ -11,60 +20,12 @@ interface componentProps {
 }
 
 const components = {
-  h1: ({ className, ...props }: componentProps) => (
-    <h1
-      className={cn(
-        "mt-2 scroll-m-20 text-4xl font-bold tracking-tight",
-        className
-      )}
-      {...props}
-    />
-  ),
-  h2: ({ className, ...props }: componentProps) => (
-    <h2
-      className={cn(
-        "mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0",
-        className
-      )}
-      {...props}
-    />
-  ),
-  h3: ({ className, ...props }: componentProps) => (
-    <h3
-      className={cn(
-        "mt-8 scroll-m-20 text-2xl font-semibold tracking-tight",
-        className
-      )}
-      {...props}
-    />
-  ),
-  h4: ({ className, ...props }: componentProps) => (
-    <h4
-      className={cn(
-        "mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
-        className
-      )}
-      {...props}
-    />
-  ),
-  h5: ({ className, ...props }: componentProps) => (
-    <h5
-      className={cn(
-        "mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
-        className
-      )}
-      {...props}
-    />
-  ),
-  h6: ({ className, ...props }: componentProps) => (
-    <h6
-      className={cn(
-        "mt-8 scroll-m-20 text-base font-semibold tracking-tight",
-        className
-      )}
-      {...props}
-    />
-  ),
+  h1: MdxH1,
+  h2: MdxH2,
+  h3: MdxH3,
+  h4: MdxH4,
+  h5: MdxH5,
+  h6: MdxH6,
   a: ({ className, ...props }: componentProps) => (
     <a
       className={cn("font-medium underline underline-offset-4", className)}
@@ -133,19 +94,11 @@ const components = {
       {...props}
     />
   ),
-  pre: ({ className, ...props }: componentProps) => (
-    <pre
-      className={cn(
-        "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4",
-        className
-      )}
-      {...props}
-    />
-  ),
+  pre: Pre,
   code: ({ className, ...props }: componentProps) => (
     <code
       className={cn(
-        "relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm",
+        "relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm",
         className
       )}
       {...props}
@@ -153,7 +106,6 @@ const components = {
   ),
   Image,
 };
-
 export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 

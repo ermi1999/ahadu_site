@@ -3,6 +3,8 @@
 import classNames from "classnames";
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import code from "@/lib/mocked";
+import HomepageMdx from "./homePageMdxComponent";
 
 const randomNumberBetween = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -51,13 +53,13 @@ export const HeroImage = () => {
   }, [inView, setLines]);
 
   return (
-    <div ref={ref} className="[perspective:2000px] w-[85%] pb-16">
+    <div ref={ref} className="[perspective:2000px] w-[95%] md:w-[85%] pb-16">
       <div
         className={classNames(
-          "relative rounded-lg border rounded-sm border-transparent-white bg-white bg-opacity-[0.01] bg-hero-gradient",
+          "relative rounded-lg border border-transparent-white bg-white bg-opacity-[0.01] bg-hero-gradient",
           inView ? "animate-image-rotate" : "[transform:rotateX(25deg)]",
           "before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-hero-glow before:opacity-0 before:[filter:blur(120px)]",
-          inView && "before:animate-image-glow",
+          inView && "before:animate-image-glow"
         )}
       >
         <div className="absolute top-0 left-0 z-20 h-full w-full overflow-hidden">
@@ -77,7 +79,7 @@ export const HeroImage = () => {
                 line.direction === "to left" &&
                   `left-0 h-[1px] w-[calc(var(--size)*0.5rem)] animate-glow-line-horizontal md:w-[calc(var(--size)*1rem)]`,
                 line.direction === "to top" &&
-                  `right-0 h-[calc(var(--size)*0.5rem)] w-[1px] animate-glow-line-vertical md:h-[calc(var(--size)*1rem)]`,
+                  `right-0 h-[calc(var(--size)*0.5rem)] w-[1px] animate-glow-line-vertical md:h-[calc(var(--size)*1rem)]`
               )}
             />
           ))}
@@ -86,7 +88,7 @@ export const HeroImage = () => {
           className={classNames(
             "absolute left-0 top-0 h-full w-full",
             "[&_path]:stroke-white [&_path]:[strokeOpacity:0.2] [&_path]:[stroke-dasharray:1] [&_path]:[stroke-dashoffset:1]",
-            inView && "[&_path]:animate-sketch-lines",
+            inView && "[&_path]:animate-sketch-lines"
           )}
           width="100%"
           viewBox="0 0 1499 778"
@@ -99,14 +101,14 @@ export const HeroImage = () => {
           <path pathLength="1" d="M538 777L538 128"></path>
         </svg>
 
-        <img
+        <div
           className={classNames(
-            "relative z-10 transition-opacity delay-[680ms] rounded-md",
-            inView ? "opacity-100" : "opacity-0",
+            "relative z-10 transition-opacity delay-[680ms] rounded-md overflow-x-auto",
+            inView ? "opacity-100" : "opacity-0"
           )}
-          src="/images/hero.png"
-          alt="Hero image"
-        />
+        >
+          <HomepageMdx code={code.body.code} />
+        </div>
       </div>
     </div>
   );

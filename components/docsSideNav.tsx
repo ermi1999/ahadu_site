@@ -19,28 +19,33 @@ export default function DocsSidebarNav({ items }: DocsSidebarNavProps) {
   const pathname = usePathname();
   const defaultValues = ["Documentation", "Getting Started"];
   return items.length ? (
-    <ScrollArea type="hover">
-      <Accordion
-        type="multiple"
-        defaultValue={defaultValues}
-        className="h-full w-full"
-      >
-        {items.map((item, index) => (
-          <div key={index}>
-            <AccordionItem value={item.title} className="border-none">
-              <AccordionTrigger className="mb-1 rounded-md px-2 py-1 text-md font-semibold transition-colors">
-                {item.title}
-              </AccordionTrigger>
-              <AccordionContent className="pl-3">
-                {item.items ? (
-                  <DocsSidebarNavItems items={item.items} pathname={pathname} />
-                ) : null}
-              </AccordionContent>
-            </AccordionItem>
-          </div>
-        ))}
-      </Accordion>
-    </ScrollArea>
+    <div className="sticky top-16 max-h-[calc(var(--vh)-4rem)] overflow-y-auto">
+      <ScrollArea>
+        <Accordion
+          type="multiple"
+          defaultValue={defaultValues}
+          className="h-full w-full"
+        >
+          {items.map((item, index) => (
+            <div key={index}>
+              <AccordionItem value={item.title} className="border-none">
+                <AccordionTrigger className="mb-1 rounded-md px-2 py-1 text-md font-semibold transition-colors">
+                  {item.title}
+                </AccordionTrigger>
+                <AccordionContent className="pl-3">
+                  {item.items ? (
+                    <DocsSidebarNavItems
+                      items={item.items}
+                      pathname={pathname}
+                    />
+                  ) : null}
+                </AccordionContent>
+              </AccordionItem>
+            </div>
+          ))}
+        </Accordion>
+      </ScrollArea>
+    </div>
   ) : null;
 }
 

@@ -56,8 +56,8 @@
     --secondary: 203, 36%, 18%;
     --secondary-foreground: 40, 26%, 93%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 240, 33%, 94%, 0.38;
+    --muted-foreground: 240, 33%, 94%, 0.6;
 
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
@@ -70,7 +70,7 @@
     --glow-lines-color-finish: #7877c6;
     --glow-lines-color-start: #9d9bf2;
 
-    --border: 217.2 32.6% 17.5%;
+    --border: 240, 33%, 94%, 0.1;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
@@ -133,4 +133,31 @@ html {
   50% {
     border-color: hsl(var(--primary));
   }
+}
+
+pre,
+pre code span {
+  color: var(--shiki-light) !important;
+  background-color: var(--shiki-light-bg) !important;
+}
+
+html.dark pre,
+html.dark pre code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+}
+
+code {
+  counter-reset: line;
+}
+
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: gray;
 }

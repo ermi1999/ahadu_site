@@ -14,12 +14,7 @@ export default function AmharicLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="am">
-      <body className={noto.className}>
-        <main className="bg-page-gradient top-0">
-          <Navbar lang="am" />
-          {children}
-        </main>
-      </body>
+      <body className={noto.className}>{children}</body>
     </html>
   );
 }

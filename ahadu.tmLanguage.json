@@ -1,0 +1,94 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ahadu",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#numeric"
+    },
+    {
+      "include": "#variable"
+    },
+    {
+      "include": "#function"
+    },
+    {
+      "include": "#class"
+    },
+    {
+      "include": "#constant"
+    },
+    {
+      "include": "#function_call"
+    },
+    {
+      "include": "#native_functions"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.ahadu",
+          "match": "\\b(ከሆነ|ካልሆነ|እስከ|ለዚህ|መልስ|ተግባር|መለያ|ክፍል)\\b"
+        },
+        {
+          "name": "keyword.operator.ahadu",
+          "match": "\\b(እና|ወይም)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.ahadu",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.ahadu",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "comments": {
+      "name": "comment.line.ahadu",
+      "match": "//.*$"
+    },
+    "numeric": {
+      "name": "constant.numeric.ahadu",
+      "match": "\\b(\\d+(\\.\\d+)?)\\b"
+    },
+    "variable": {
+      "name": "variable.other.ahadu",
+      "match": "\\b(\\w+)\\b(?=\\s*\\=)"
+    },
+    "function": {
+      "name": "entity.name.function.ahadu",
+      "match": "\\b(ተግባር)\\s+(\\w+)\\s*\\{"
+    },
+    "class": {
+      "name": "entity.name.type.class.ahadu",
+      "match": "\\b(\\w+)\\b(?=\\s*\\{)"
+    },
+    "constant": {
+      "name": "constant.language.ahadu",
+      "match": "\\b(እውነት|ሀሰት|ባዶ)\\b"
+    },
+    "function_call": {
+      "name": "entity.name.function.ahadu",
+      "match": "\\b(\\w+)\\b(?=\\s*\\()"
+    },
+    "native_functions": {
+      "name": "entity.name.function.ahadu",
+      "match": "\\b(አውጣ)\\b"
+    }
+  },
+  "scopeName": "source.ahadu"
+}

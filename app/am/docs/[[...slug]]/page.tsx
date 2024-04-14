@@ -15,7 +15,7 @@ interface DocPageProps {
 }
 
 async function getDocFromParams(params: any) {
-  let slug = params.slug ? "en/" : "en";
+  let slug = params.slug ? "am/" : "am";
   slug = slug + (params.slug?.join("/") || "");
   const doc = allDocs.find((doc) => doc.slugAsParams === slug);
   if (!doc) {

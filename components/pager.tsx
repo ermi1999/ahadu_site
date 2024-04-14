@@ -22,10 +22,12 @@ export function DocsPager({ doc }: DocsPagerProps) {
           href={pager.prev.href}
           className="flex flex-col [&>*]:hover:text-primary-foreground [&>*>*]:hover:text-primary-foreground"
         >
-          <span className="text-muted-foreground transition-colors">Prev</span>
+          <span className="text-muted-foreground transition-colors ml-auto">
+            Prev
+          </span>
           <span className="flex flex-row items-center">
-            {pager.prev.title}
             <ChevronLeft className="mr-2 h-4 w-4 text-muted-foreground transition-colors" />
+            {pager.prev.title}
           </span>
         </Link>
       )}

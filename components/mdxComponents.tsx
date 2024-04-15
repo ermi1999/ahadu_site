@@ -16,6 +16,8 @@ interface MdxProps {
 }
 
 interface componentProps {
+  __rawString__?: any;
+  children?: React.ReactNode;
   className?: string | undefined;
 }
 
@@ -94,7 +96,11 @@ const components = {
       {...props}
     />
   ),
-  pre: Pre,
+  pre: ({ __rawString__, children, ...props }: componentProps) => (
+    <Pre __rawString__={__rawString__} {...props}>
+      {children}
+    </Pre>
+  ),
   code: ({ className, ...props }: componentProps) => (
     <code
       className={cn(

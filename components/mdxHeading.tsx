@@ -42,7 +42,6 @@ const MdxHeading = ({
             }
           })} */}
           {children}
-          <Separator className="w-full my-3" />
         </VariableHeader>
       </Link>
     );
@@ -54,42 +53,42 @@ const MdxHeading = ({
 export const MdxH1 = (props: any) => (
   <MdxHeading
     h="h1"
-    className="pt-2 scroll-m-20 text-4xl font-bold tracking-tight"
+    className="mt-2 scroll-m-20 text-4xl font-bold tracking-tight"
     {...props}
   />
 );
 export const MdxH2 = (props: any) => (
   <MdxHeading
     h="h2"
-    className="pt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0"
+    className="mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight"
     {...props}
   />
 );
 export const MdxH3 = (props: any) => (
   <MdxHeading
     h="h3"
-    className="pt-8 scroll-m-20 text-2xl font-semibold tracking-tight"
+    className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight"
     {...props}
   />
 );
 export const MdxH4 = (props: any) => (
   <MdxHeading
     h="h4"
-    className="pt-8 scroll-m-20 text-xl font-semibold tracking-tight"
+    className="mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
     {...props}
   />
 );
 export const MdxH5 = (props: any) => (
   <MdxHeading
     h="h5"
-    className="pt-8 scroll-m-20 text-lg font-semibold tracking-tight"
+    className="mt-8 scroll-m-20 text-lg font-semibold tracking-tight"
     {...props}
   />
 );
 export const MdxH6 = (props: any) => (
   <MdxHeading
     h="h6"
-    className="pt-8 scroll-m-20 text-base font-semibold tracking-tight"
+    className="mt-8 scroll-m-20 text-base font-semibold tracking-tight"
     {...props}
   />
 );

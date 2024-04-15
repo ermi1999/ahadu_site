@@ -16,13 +16,16 @@ const computedFields = {
   },
   slugAsParams: {
     type: "string",
-    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+    resolve: (doc) => {
+      const lang = doc._raw.flattenedPath.split("/")[0];
+      return `${lang}/${doc._raw.flattenedPath.split("/").slice(2).join("/")}`;
+    },
   },
 };
 
 export const DocEnglish = defineDocumentType(() => ({
   name: "Doc",
-  filePathPattern: `docs/en/**/*.mdx`,
+  filePathPattern: `en/docs/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -38,7 +41,7 @@ export const DocEnglish = defineDocumentType(() => ({
 
 export const DocAmharic = defineDocumentType(() => ({
   name: "Doc",
-  filePathPattern: `docs/am/**/*.mdx`,
+  filePathPattern: `am/docs/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {

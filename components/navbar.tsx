@@ -5,7 +5,10 @@ import { Separator } from "./ui/separator";
 import Image from "next/image";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import DocsSidebarNav from "./docsSideNav";
-import { docsConfig } from "@/config/docs";
+import {
+  sidebarNavConfigAmharic,
+  sidebarNavConfigEnglish,
+} from "@/config/docs";
 import { BiMenuAltLeft } from "react-icons/bi";
 
 interface NavbarProps {
@@ -24,7 +27,13 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, page }) => {
                 <BiMenuAltLeft size={30} />
               </SheetTrigger>
               <SheetContent side="left">
-                <DocsSidebarNav items={docsConfig.sidebarNav} />
+                <DocsSidebarNav
+                  sidebarNavConfig={
+                    lang == "en"
+                      ? sidebarNavConfigEnglish
+                      : sidebarNavConfigAmharic
+                  }
+                />
               </SheetContent>
             </Sheet>
           )}

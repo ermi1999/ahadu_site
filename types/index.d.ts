@@ -3,8 +3,6 @@ export type NavItem = {
   href: string;
 };
 
-export type MainNavItem = NavItem;
-
 export type SidebarNavItem = {
   title: string;
 } & (
@@ -23,6 +21,6 @@ export type SidebarNavItem = {
 );
 
 export type DocsConfig = {
-  mainNav: MainNavItem[];
   sidebarNav: SidebarNavItem[];
+  defaultValues: string[];
 };

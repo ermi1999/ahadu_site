@@ -101,9 +101,20 @@ export const HeroImage = () => {
           <path pathLength="1" d="M538 777L538 128"></path>
         </svg>
 
+        <div className="md:hidden">
+          <img
+            className={classNames(
+              "relative z-10 transition-opacity delay-[680ms] rounded-md overflow-x-auto",
+              inView ? "opacity-100" : "opacity-0"
+            )}
+            src="/images/hero.png"
+            alt="hero image"
+          />
+        </div>
+
         <div
           className={classNames(
-            "relative z-10 transition-opacity delay-[680ms] rounded-md overflow-x-auto",
+            "hidden md:block relative z-10 transition-opacity delay-[680ms] rounded-md overflow-x-auto",
             inView ? "opacity-100" : "opacity-0"
           )}
         >

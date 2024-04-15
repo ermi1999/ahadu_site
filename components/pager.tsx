@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { Doc } from "contentlayer/generated";
 
-import { docsConfig } from "@/config/docs";
+import {
+  sidebarNavConfigAmharic,
+  sidebarNavConfigEnglish,
+} from "@/config/docs";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface DocsPagerProps {
   doc: Doc;
+  lang: string;
 }
 
-export function DocsPager({ doc }: DocsPagerProps) {
-  const pager = getPagerForDoc(doc);
+export function DocsPager({ doc, lang }: DocsPagerProps) {
+  const pager = getPagerForDoc(doc, lang);
 
   if (!pager) {
     return null;
@@ -47,10 +51,18 @@ export function DocsPager({ doc }: DocsPagerProps) {
   );
 }
 
-export function getPagerForDoc(doc: Doc) {
-  const flattenedLinks = [null, ...flatten(docsConfig.sidebarNav), null];
+export function getPagerForDoc(doc: Doc, lang: string) {
+  const flattenedLinks = [
+    null,
+    ...flatten(
+      lang === "am"
+        ? sidebarNavConfigAmharic.sidebarNav
+        : sidebarNavConfigEnglish.sidebarNav
+    ),
+    null,
+  ];
   const activeIndex = flattenedLinks.findIndex(
-    (link) => "/en" + doc.slug === link?.href
+    (link) => doc.slug === link?.href
   );
   const prev = activeIndex !== 0 ? flattenedLinks[activeIndex - 1] : null;
   const next =

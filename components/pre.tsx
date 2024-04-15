@@ -4,7 +4,7 @@ import { Copy, Check } from "lucide-react";
 import { Button } from "./ui/button";
 interface PreProps {
   children: React.ReactNode;
-  __rawString__: any;
+  __rawString__?: any;
 }
 export default function Pre({ __rawString__, children, ...props }: PreProps) {
   const [isCopied, setIsCopied] = useState(false);

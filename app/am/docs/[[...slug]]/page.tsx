@@ -15,8 +15,7 @@ interface DocPageProps {
 }
 
 async function getDocFromParams(params: any) {
-  let slug = params.slug ? "am/" : "am";
-  slug = slug + (params.slug?.join("/") || "");
+  const slug = "am/" + (params.slug?.join("/") || "");
   const doc = allDocs.find((doc) => doc.slugAsParams === slug);
   if (!doc) {
     null;
@@ -71,7 +70,7 @@ export default async function EnglishDocPage({ params }: DocPageProps) {
         <Separator className="w-full" />
         <Mdx code={doc.body.code} />
         <Separator className="w-full" />
-        <DocsPager doc={doc} />
+        <DocsPager doc={doc} lang="am" />
       </article>
       <aside className="hidden lg:block">
         <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10">

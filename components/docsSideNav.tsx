@@ -1,5 +1,5 @@
 "use client";
-import { SidebarNavItem } from "@/types";
+import { DocsConfig, SidebarNavItem } from "@/types";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 import { usePathname } from "next/navigation";
 import {
@@ -12,21 +12,22 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 export interface DocsSidebarNavProps {
-  items: SidebarNavItem[];
+  sidebarNavConfig: DocsConfig;
 }
 
-export default function DocsSidebarNav({ items }: DocsSidebarNavProps) {
+export default function DocsSidebarNav({
+  sidebarNavConfig,
+}: DocsSidebarNavProps) {
   const pathname = usePathname();
-  const defaultValues = ["Documentation", "Getting Started"];
-  return items.length ? (
+  return sidebarNavConfig.sidebarNav ? (
     <div className="sticky top-16 max-h-[calc(var(--vh)-4rem)] overflow-y-auto">
       <ScrollArea>
         <Accordion
           type="multiple"
-          defaultValue={defaultValues}
+          defaultValue={sidebarNavConfig.defaultValues}
           className="h-full w-full"
         >
-          {items.map((item, index) => (
+          {sidebarNavConfig.sidebarNav.map((item, index) => (
             <div key={index}>
               <AccordionItem value={item.title} className="border-none">
                 <AccordionTrigger className="mb-1 rounded-md px-2 py-1 text-md font-semibold transition-colors">

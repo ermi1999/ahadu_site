@@ -25,7 +25,7 @@ export default function EnglishPage() {
           <HeroSubtitle>
             Ahadu is built for you to write with your own language.
           </HeroSubtitle>
-          <HeroSubtitle>For ethiopians by ethiopian.</HeroSubtitle>
+          <HeroSubtitle>For ethiopians.</HeroSubtitle>
           <HeroButton>
             <HeroPrimaryButton lang="en">
               Get Started <ChevronRight size={16} />

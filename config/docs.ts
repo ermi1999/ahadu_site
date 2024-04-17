@@ -15,28 +15,36 @@ export const sidebarNavConfigEnglish: DocsConfig = {
       ],
     },
     {
-      title: "Documentation",
+      title: "The language",
       items: [
         {
+          title: "Intro",
+          href: "/en/docs/the-language",
+        },
+        {
           title: "Variables",
-          href: "/en/docs/variables",
+          href: "/en/docs/the-language/variables",
+        },
+        {
+          title: "Block Statements and Grouping",
+          href: "/en/docs/the-language/block-statements-and-grouping",
         },
         {
           title: "Functions",
-          href: "/en/docs/functions",
+          href: "/en/docs/the-language/functions",
         },
         {
           title: "Classes",
-          href: "/en/docs/classes",
+          href: "/en/docs/the-language/classes",
         },
         {
           title: "Built in functions",
-          href: "/en/docs/built-in-functions",
+          href: "/en/docs/the-language/built-in-functions",
         },
       ],
     },
   ],
-  defaultValues: ["Documentation", "Getting Started"],
+  defaultValues: ["The language", "Getting Started"],
 };
 
 export const sidebarNavConfigAmharic: DocsConfig = {

@@ -10,6 +10,7 @@ import {
   MdxH6,
 } from "@/components/mdxHeading";
 import Pre from "./pre";
+import Link from "next/link";
 
 interface MdxProps {
   code: string;
@@ -36,7 +37,10 @@ const components = {
   ),
   p: ({ className, ...props }: componentProps) => (
     <p
-      className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
+      className={cn(
+        "leading-7 [&:not(:first-child)]:mt-6 font-medium text-lg",
+        className
+      )}
       {...props}
     />
   ),
@@ -103,14 +107,12 @@ const components = {
   ),
   code: ({ className, ...props }: componentProps) => (
     <code
-      className={cn(
-        "relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm",
-        className
-      )}
+      className={cn("relative rounded font-mono text-sm", className)}
       {...props}
     />
   ),
   Image,
+  Link: Link,
 };
 export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);

@@ -1,0 +1,37 @@
+---
+title: Block Statements And Grouping
+description: Blocking and grouping statements.
+---
+
+# Block Statements
+
+A Block statements are a list of statements that are excuted sequentially. they can be helpful to excute a list of statement based on some condition you can define a block using `{}`.
+
+you can't access variables that are defined inside block scope outside of the block scope.
+
+```ahadu
+መለያ global_var = 5;
+{
+    መለያ local_var = global_var + 10; // i can access a global variable from inside a block scope the result of this statement will be 15.
+}
+global_var = local_var; // [!code error] // I cannot do this because local_var is out of scope
+```
+
+but you can access a local variable from another scope as long as that scope is defined at the same level scope or below, consider the following example
+
+```ahadu
+
+{
+    መለያ local_var = 5;
+    {
+        local_var = local_var + 1; // 6
+        {
+            local_var = local_var + 1; // 7
+        }
+    }
+}
+```
+
+# Grouping
+
+Grouping is a way for you to group statements with brackets.

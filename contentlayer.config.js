@@ -7,6 +7,12 @@ import { getHighlighter } from "shiki";
 import fs from "fs";
 import { visit } from "unist-util-visit";
 
+import {
+  transformerNotationHighlight,
+  transformerNotationDiff,
+  transformerNotationErrorLevel,
+} from "@shikijs/transformers";
+
 /** @type {import('contentlayer/source-files').ComputedFields} */
 
 const computedFields = {
@@ -76,10 +82,19 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
+          defaultLang: {
+            block: "ahadu",
+            inline: "ahadu",
+          },
           theme: {
             dark: "houston",
             light: "catppuccin-latte",
           },
+          transformers: [
+            transformerNotationDiff(),
+            transformerNotationHighlight(),
+            transformerNotationErrorLevel(),
+          ],
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
@@ -100,7 +115,7 @@ export default makeSource({
             return getHighlighter({
               ...options,
               themes: ["andromeeda", "catppuccin-latte", "houston"],
-              langs: [ahadu],
+              langs: [ahadu, "bash"],
             });
           },
         },

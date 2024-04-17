@@ -60,7 +60,7 @@ export function DocsSidebarNavItems({
   pathname,
 }: DocsSidebarNavItemsProps) {
   return items.length ? (
-    <div className="flex flex-col pl-2 border-l border-dotted border-primary-foreground my-2">
+    <div className="flex flex-col pl-2 border-l my-2">
       {items.map((item, index) =>
         item.href ? (
           <Link
@@ -69,7 +69,7 @@ export function DocsSidebarNavItems({
             className={cn(
               "font-medium text-muted-foreground rounded-sm p-2 hover:text-primary-foreground transition-colors",
               {
-                "text-primary": item.href === pathname,
+                "text-primary hover:text-off-blue": item.href === pathname,
               }
             )}
           >

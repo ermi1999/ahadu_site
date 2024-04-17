@@ -137,17 +137,18 @@ html {
 
 pre,
 pre code span {
-  color: var(--shiki-light) !important;
-  background-color: var(--shiki-light-bg) !important;
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
 }
 
 html.dark pre,
 html.dark pre code span {
-  color: var(--shiki-dark) !important;
-  background-color: var(--shiki-dark-bg) !important;
+  color: var(--shiki-dark);
+  background-color: var(--shiki-dark-bg);
 }
 
-code {
+/* if i want line numbers */
+/* code {
   counter-reset: line;
 }
 
@@ -160,4 +161,34 @@ code > [data-line]::before {
   margin-right: 1rem;
   text-align: right;
   color: gray;
+} */
+
+html.dark pre code .highlighted,
+html pre code .highlighted {
+  background-color: rgba(142, 150, 170, 0.14);
+}
+
+html.dark pre code .highlighted *,
+html pre code .highlighted * {
+  background-color: transparent;
+}
+
+html.dark .has-highlighted,
+html .has-highlighted {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  padding-top: 1rem /* 16px */;
+  padding-bottom: 1rem /* 16px */;
+}
+
+html.dark .has-highlighted code > span,
+html .has-highlighted code > span {
+  padding-left: 0.5rem /* 8px */;
+  padding-right: 0.5rem /* 8px */;
+}
+
+.has-highlighted code .highlighted.error {
+  background-color: rgba(244, 63, 94, 0.16);
 }

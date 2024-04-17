@@ -63,18 +63,17 @@ export default async function EnglishDocPage({ params }: DocPageProps) {
   return (
     <>
       <article className="px-4 py-10 space-y-5 w-full lg:w-[65%]">
-        <div className="my-2 space-y-2">
+        <div className="space-y-2">
           <h1 className="text-5xl">{doc.title}</h1>
-          <h2 className="text-xl text-muted-foreground">{doc.description}</h2>
+          <p className="text-lg text-muted-foreground">{doc.description}</p>
         </div>
-        <Separator className="w-full" />
         <Mdx code={doc.body.code} />
         <Separator className="w-full" />
-        <DocsPager doc={doc} lang="am" />
+        <DocsPager doc={doc} lang="en" />
       </article>
       <aside className="hidden lg:block">
         <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10">
-          <DashboardTableOfContents toc={toc} />
+          <DashboardTableOfContents toc={toc} lang="en" />
         </div>
       </aside>
     </>

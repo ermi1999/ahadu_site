@@ -154,6 +154,7 @@ const config = {
         transparent: "transparent",
         white: "#fff",
         "off-white": "#f7f8f8",
+        "off-blue": "#68b5fb",
         "transparent-white": "rgba(255, 255, 255, 0.08)",
         grey: "#858699",
         "grey-dark": "#222326",

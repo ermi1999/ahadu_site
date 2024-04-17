@@ -74,7 +74,7 @@ export default async function EnglishDocPage({ params }: DocPageProps) {
       </article>
       <aside className="hidden lg:block">
         <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10">
-          <DashboardTableOfContents toc={toc} />
+          <DashboardTableOfContents toc={toc} lang="am" />
         </div>
       </aside>
     </>

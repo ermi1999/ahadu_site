@@ -1,0 +1,41 @@
+---
+title: Variables
+description: Variables are places that store values.
+---
+
+# Declaring variables
+
+```ahadu
+መለያ ስም;
+```
+
+where `ስም{:ahadu}` is the identifier of the variable. Identifiers can be any string of Latin letters, Amharic letters and underscores not beginning with a digit and not being a reserved word. as mentioned in <Link className="text-primary hover:text-off-blue transition-colors" href='/en/docs/the-language#lexical-conventions'>Lexical Conventions</Link>.
+
+every variable is assigned to nil (ባዶ) value unless you explicitly pass the value.
+
+```ahadu showLineNumbers
+መለያ ስም;
+መለያ ሌላ_ስም = ባዶ;
+```
+
+here both ስም and ሌላ_ስም are nil (ባዶ).
+
+```ahadu
+መለያ ስም;
+መለያ ሌላ_ስም = ባዶ;
+ስም = 1; // [!code highlight]
+```
+
+here i assigned 1 to ስም, now the value is 1.
+
+# Variable types
+
+There are two types of variables in ahadu: global variables and local variables.
+
+## Global variables
+
+A global variable is a variable that is declare outside of any <Link className="text-primary hover:text-off-blue transition-colors" href='/en/docs/the-language/block-statements-and-grouping#block-statements'>block (scope)</Link>. and is accesible from any <Link className="text-primary hover:text-off-blue transition-colors" href='/en/docs/the-language/block-statements-and-grouping#block-statements'>block (scope)</Link>.
+
+## Local variables
+
+A local variable is a variable that is accesible from only the <Link className="text-primary hover:text-off-blue transition-colors" href='/en/docs/the-language/block-statements-and-grouping#block-statements'>block (scope)</Link> where it is declared.

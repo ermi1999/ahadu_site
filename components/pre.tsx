@@ -31,7 +31,7 @@ export default function Pre({ __rawString__, children, ...props }: PreProps) {
   };
   return (
     <>
-      <div className="mt-6 flex flex-row items-center border-t border-x rounded-lg rounded-b-none px-2">
+      <div className="!mt-6 flex flex-row items-center border-t border-x rounded-lg rounded-b-none px-2">
         <div className="space-x-2 flex flex-row">
           <div className="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
           <div className="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
@@ -51,7 +51,9 @@ export default function Pre({ __rawString__, children, ...props }: PreProps) {
         </Button>
       </div>
       <pre
-        className={"overflow-x-auto rounded-lg rounded-t-none border py-4 flex"}
+        className={
+          "overflow-x-auto rounded-lg rounded-t-none border py-4 flex px-2"
+        }
         {...props}
       >
         {children}

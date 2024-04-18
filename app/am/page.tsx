@@ -11,7 +11,9 @@ import { HeroImage } from "@/components/heroImage";
 import { Navbar } from "@/components/navbar";
 
 export default function AmharicPage() {
-  localStorage.setItem("lang", "am");
+  if (typeof window !== "undefined") {
+    localStorage.setItem("lang", "am");
+  }
   return (
     <main className="bg-page-gradient top-0">
       <Navbar lang="am" page="home" />

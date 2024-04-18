@@ -5,6 +5,15 @@ import React, { useEffect, useState } from "react";
 import { Separator } from "./ui/separator";
 import { cn } from "@/lib/utils";
 
+const headingComponents = {
+  h1: "h1",
+  h2: "h2",
+  h3: "h3",
+  h4: "h4",
+  h5: "h5",
+  h6: "h6",
+} as const;
+
 interface MdxHeadingProps {
   h?: string;
   id?: string;
@@ -13,7 +22,7 @@ interface MdxHeadingProps {
 }
 
 const MdxHeading = ({
-  h,
+  h = "h1",
   id,
   className,
   children,
@@ -28,7 +37,7 @@ const MdxHeading = ({
   if (!isMounted) {
     return null;
   }
-  const VariableHeader = h;
+  const VariableHeader = headingComponents[h as keyof typeof headingComponents];
 
   if (id) {
     return (

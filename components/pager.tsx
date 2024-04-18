@@ -28,7 +28,7 @@ export function DocsPager({ doc, lang }: DocsPagerProps) {
           className="flex flex-col [&>*]:hover:text-primary-foreground [&>*>*]:hover:text-primary-foreground"
         >
           <span className="text-muted-foreground transition-colors ml-auto">
-            Prev
+            {lang === "am" ? "ቀዳሚ" : "Prev"}
           </span>
           <span className="flex flex-row items-center">
             <ChevronLeft className="mr-2 h-4 w-4 text-muted-foreground transition-colors" />
@@ -41,7 +41,9 @@ export function DocsPager({ doc, lang }: DocsPagerProps) {
           href={pager.next.href}
           className="flex flex-col [&>*]:hover:text-primary-foreground [&>*>*]:hover:text-primary-foreground ml-auto"
         >
-          <span className="text-muted-foreground transition-colors">Next</span>
+          <span className="text-muted-foreground transition-colors">
+            {lang == "am" ? "ቀጣይ" : "Next"}
+          </span>
           <span className="flex flex-row items-center">
             <span className="font-semibold">{pager.next.title}</span>
             <ChevronRight className="ml-2 h-4 w-4 text-muted-foreground transition-colors" />

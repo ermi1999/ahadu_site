@@ -53,7 +53,7 @@ export async function generateStaticParams(): Promise<
   }));
 }
 
-export default async function EnglishDocPage({ params }: DocPageProps) {
+export default async function AmharicDocPage({ params }: DocPageProps) {
   const doc = await getDocFromParams(params);
   if (!doc) {
     notFound();

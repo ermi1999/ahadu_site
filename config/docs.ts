@@ -63,7 +63,7 @@ export const sidebarNavConfigAmharic: DocsConfig = {
       ],
     },
     {
-      title: "ሰነድ",
+      title: "መመሪያዎች",
       items: [
         {
           title: "መለያዎች",
@@ -84,5 +84,5 @@ export const sidebarNavConfigAmharic: DocsConfig = {
       ],
     },
   ],
-  defaultValues: ["መጀመሪያ", "ሰነድ"],
+  defaultValues: ["መጀመሪያ", "መመሪያዎች"],
 };

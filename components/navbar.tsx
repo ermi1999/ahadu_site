@@ -23,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, page }) => {
         <div className="mr-auto flex flex-row space-x-2 sm:ml-2 md:ml-4 lg:ml-7">
           {page === "doc" && (
             <Sheet>
-              <SheetTrigger className="md:hidden font-normal text-base text-primary-foreground">
+              <SheetTrigger className="md:hidden font-normal text-base text-primary-foreground hover:text-primary transition-colors">
                 <BiMenuAltLeft size={30} />
               </SheetTrigger>
               <SheetContent side="left">
@@ -74,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, page }) => {
             href={`/${lang}/docs`}
             className="hover:text-primary font-semibold transition-colors"
           >
-            {lang == "am" ? "ሰነዶች" : "Docs"}
+            {lang == "am" ? "መመሪያ" : "Docs"}
           </Link>
           <Separator orientation="vertical" className="h-[20%]" />
           <ModeToggle lang={lang} />

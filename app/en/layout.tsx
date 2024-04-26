@@ -1,16 +1,10 @@
 import { Metadata } from "next";
-import { Lato } from "next/font/google";
-import { Navbar } from "@/components/navbar";
+import { lato } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Ahadu",
   description: "Write with your own language",
 };
-
-const lato = Lato({
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "700", "900"],
-});
 
 export default function EnglishLayout({
   children,

@@ -74,7 +74,7 @@ export default makeSource({
 
             if (codeEl.tagName !== "code") return;
 
-            node.__rawString__ = codeEl.children?.[0].value;
+            node.__rawstring__ = codeEl.children?.[0].value;
           }
         });
       },
@@ -84,7 +84,7 @@ export default makeSource({
         {
           defaultLang: {
             block: "ahadu",
-            inline: "ahadu",
+            inline: "plaintext",
           },
           theme: {
             dark: "houston",
@@ -115,7 +115,7 @@ export default makeSource({
             return getHighlighter({
               ...options,
               themes: ["andromeeda", "catppuccin-latte", "houston"],
-              langs: [ahadu, "bash"],
+              langs: [ahadu, "bash", "plaintext"],
             });
           },
         },
@@ -158,7 +158,7 @@ export default makeSource({
 
             preElement.properties["__withMeta__"] =
               node.children.at(0).tagName === "div";
-            preElement.properties["__rawString__"] = node.__rawString__;
+            preElement.properties["__rawstring__"] = node.__rawstring__;
           }
         });
       },

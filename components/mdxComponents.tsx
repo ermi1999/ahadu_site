@@ -11,13 +11,17 @@ import {
 } from "@/components/mdxHeading";
 import Pre from "./pre";
 import Link from "next/link";
+import Warning from "@/components/warning";
+import Optional from "@/components/optional";
+import Info from "@/components/info";
+import ReservedWordsTable from "@/app/reservedWords";
 
 interface MdxProps {
   code: string;
 }
 
 interface componentProps {
-  __rawString__?: any;
+  __rawstring__?: any;
   children?: React.ReactNode;
   className?: string | undefined;
 }
@@ -100,19 +104,26 @@ const components = {
       {...props}
     />
   ),
-  pre: ({ __rawString__, children, ...props }: componentProps) => (
-    <Pre __rawString__={__rawString__} {...props}>
+  pre: ({ __rawstring__, children, ...props }: componentProps) => (
+    <Pre __rawstring__={__rawstring__} {...props}>
       {children}
     </Pre>
   ),
   code: ({ className, ...props }: componentProps) => (
     <code
-      className={cn("relative rounded font-mono text-sm", className)}
+      className={cn(
+        "relative rounded font-mono text-sm font-medium",
+        className
+      )}
       {...props}
     />
   ),
   Image,
-  Link: Link,
+  Link,
+  Warning,
+  Optional,
+  Info,
+  ReservedWordsTable,
 };
 export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);

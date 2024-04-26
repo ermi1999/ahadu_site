@@ -1,13 +1,12 @@
 import { Metadata } from "next";
-import { Noto_Serif_Ethiopic } from "next/font/google";
-import { Navbar } from "@/components/navbar";
+import { noto } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "አሀዱ",
   description: "በራሳችን ቋንቋ እንጻፍ።",
 };
 
-const noto = Noto_Serif_Ethiopic({ subsets: ["ethiopic"] });
+// const noto = Noto_Serif_Ethiopic({ subsets: ["ethiopic"] });
 
 export default function AmharicLayout({
   children,

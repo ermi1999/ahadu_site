@@ -1,0 +1,32 @@
+---
+title: While statement
+description:  The while statement creates a loop that executes a specified statement as long as the test condition evaluates to true.
+---
+
+## Syntax
+
+```ahadu
+እስከ (condition) {
+    // statement
+}
+```
+### Condition
+An expression evaluated before each pass through the loop. If this condition evaluates to true, statement is executed. When condition evaluates to false, execution continues with the statement after the while loop. 
+
+### Statement
+
+An optional statement that is executed as long as the condition evaluates to true.
+
+
+## Example
+
+The following `while` loop iterates as long as ሀ is less than 10 printing the current state of ሀ
+
+```ahadu
+መለያ ሀ = 0;
+
+እስከ (ሀ < 10) {
+    አውጣ ሀ;
+    ሀ = ሀ + 1;
+}
+```

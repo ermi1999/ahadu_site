@@ -5,15 +5,17 @@ description: Variables are places that store values.
 
 # Declaring variables
 
+We can declare a variable using `መለያ` keyword
 ```ahadu
 መለያ ስም;
 ```
 
-where `ስም{:ahadu}` is the identifier of the variable. Identifiers can be any string of Latin letters, Amharic letters and underscores not beginning with a digit and not being a reserved word. as mentioned in <Link className="text-primary hover:text-off-blue transition-colors" href='/en/docs/the-language#lexical-conventions'>Lexical Conventions</Link>.
+where `ስም` is the identifier of the variable. Identifiers can be any string of Latin letters, Amharic letters and underscores not beginning with a digit and not being a reserved word. as mentioned in <Link className="text-primary hover:text-off-blue transition-colors" href='/en/docs/the-language#lexical-conventions'>Lexical Conventions</Link>.
 
-every variable is assigned to nil (ባዶ) value unless you explicitly pass the value.
+## Assigning values
+every variable is assigned to nil (ባዶ) value, unless you explicitly pass the value.
 
-```ahadu showLineNumbers
+```ahadu
 መለያ ስም;
 መለያ ሌላ_ስም = ባዶ;
 ```
@@ -38,4 +40,4 @@ A global variable is a variable that is declare outside of any <Link className="
 
 ## Local variables
 
-A local variable is a variable that is accesible from only the <Link className="text-primary hover:text-off-blue transition-colors" href='/en/docs/the-language/block-statements-and-grouping#block-statements'>block (scope)</Link> where it is declared.
+A local variable is a variable that is accessible from only the <Link className="text-primary hover:text-off-blue transition-colors" href='/en/docs/the-language/block-statements-and-grouping#block-statements'>block (scope)</Link> where it is declared.

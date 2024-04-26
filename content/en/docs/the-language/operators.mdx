@@ -1,0 +1,46 @@
+---
+title: Operators
+---
+
+
+# Arithmetic Operators
+- +: addition
+- -: subtraction
+- *: multiplication
+- /: float division
+- %: modulo
+- -: unary minus
+
+# Relational Operators
+- `==`: equality
+- `<`: less than
+- `>`: greater than
+- `<=`: less or equal
+- `>=`: greater or equal
+- `!=`: not equal
+
+# Logical Operators
+The negation operator `!` always returns false or true. The conjunction operator `እና` returns its first argument if this value is false or nil; otherwise, `እና` returns its second argument. The disjunction operator `ወይም` returns its first argument if this value is different from `ባዶ` and false; otherwise, `ወይም` returns its second argument. Both `እና` and `ወይም` use short-circuit evaluation; that is, the second operand is evaluated only if necessary. Here are some examples:
+
+
+
+- ወይም
+
+```ahadu
+አውጣ 10 ወይም 20; // 10
+አውጣ 10 ወይም ባዶ; // 10
+አውጣ ባዶ ወይም 10; // 10
+```
+
+- እና
+```ahadu
+አውጣ 10 እና 20; // 20
+አውጣ 10 እና ሀሰት; // ሀሰት
+አውጣ ሀሰት እና 10; // ሀሰት
+```
+
+- !
+```ahadu
+አውጣ !ሀሰት; // እውነት
+አውጣ !እውነት; // ሀሰት
+```

@@ -5,7 +5,7 @@ description: Blocking and grouping statements.
 
 # Block Statements
 
-A Block statements are a list of statements that are excuted sequentially. they can be helpful to excute a list of statement based on some condition you can define a block using `{}`.
+A Block statements are a list of statements that are executed sequentially. they can be helpful to execute a list of statement based on some condition you can define a block using `{}`.
 
 you can't access variables that are defined inside block scope outside of the block scope.
 
@@ -20,7 +20,6 @@ global_var = local_var; // [!code error] // I cannot do this because local_var i
 but you can access a local variable from another scope as long as that scope is defined at the same level scope or below, consider the following example
 
 ```ahadu
-
 {
     መለያ local_var = 5;
     {
@@ -34,4 +33,21 @@ but you can access a local variable from another scope as long as that scope is 
 
 # Grouping
 
-Grouping is a way for you to group statements with brackets.
+The grouping ( ) operator controls the precedence of evaluation in expressions. It also acts as a container for arbitrary expressions in certain syntactic constructs, where ambiguity or syntax errors would otherwise occur.
+
+consider the following example.
+
+```ahadu
+መለያ ሀ = 1;
+መለያ ለ = 2;
+መለያ ሐ = 3;
+
+// default precedence
+አውጣ ሀ + ለ * ሐ; // will print 7
+// evaluated by default like this
+አውጣ ሀ + (ለ * ሐ); // will print 7
+
+// now overriding precedence
+// addition before multiplication
+አውጣ (ሀ + ለ) * ሐ; // will print 9
+```

@@ -174,21 +174,39 @@ html pre code .highlighted * {
 }
 
 html.dark .has-highlighted,
-html .has-highlighted {
+html.dark .has-diff,
+html .has-highlighted,
+html .has-diff {
   overflow-x: auto;
   border-radius: 0.5rem;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   padding-top: 1rem /* 16px */;
   padding-bottom: 1rem /* 16px */;
+  border-width: 1px;
 }
 
 html.dark .has-highlighted code > span,
-html .has-highlighted code > span {
+html.dark .has-diff code > span,
+html .has-highlighted code > span,
+html .has-diff code > span {
   padding-left: 0.5rem /* 8px */;
   padding-right: 0.5rem /* 8px */;
 }
 
 .has-highlighted code .highlighted.error {
   background-color: rgba(244, 63, 94, 0.16);
+}
+
+.has-diff code .diff.add {
+  background-color: rgba(16, 185, 129, .16);
+}
+
+.has-diff code .diff * {
+  background-color: transparent;
+}
+
+.has-diff code .diff.add::before {
+  content: "+";
+  color: #3dd68c;
 }

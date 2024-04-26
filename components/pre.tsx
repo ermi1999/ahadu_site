@@ -4,9 +4,9 @@ import { Copy, Check } from "lucide-react";
 import { Button } from "./ui/button";
 interface PreProps {
   children: React.ReactNode;
-  __rawString__?: any;
+  __rawstring__?: any;
 }
-export default function Pre({ __rawString__, children, ...props }: PreProps) {
+export default function Pre({ __rawstring__, children, ...props }: PreProps) {
   const [isCopied, setIsCopied] = useState(false);
 
   async function copyTextToClipboard(text: string) {
@@ -19,7 +19,7 @@ export default function Pre({ __rawString__, children, ...props }: PreProps) {
 
   const handleClick = async () => {
     if (children) {
-      await copyTextToClipboard(__rawString__);
+      await copyTextToClipboard(__rawstring__);
       setIsCopied(true);
 
       setTimeout(() => {

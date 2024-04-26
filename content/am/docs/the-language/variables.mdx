@@ -1,0 +1,43 @@
+---
+title: መለያ
+description: መለያዎች ነገሮችን ማስቀመጫ ቦታ ናቸው።
+---
+
+# መለያዎች
+
+መለያዎች ነገሮችን በመለያው ስም በማቀመጥ ነገሮቹን በመለያው ስም መልሶ ማግኘት ያስችሉናል።
+
+# መለያዎችን ማወጅ
+
+ነገሮችን በስማቸው ከመጥራታችን በፊት ልናውጃቸው ይገባል። መለያዎችን ደግሞ `መለያ` የተባለ ቁልፍ ቃልን በመጠቀም እናውጃለን
+
+```ahadu
+መለያ ስም;
+```
+ስም የመለያው ስም ነው። ስም ሁሉም አይነት የላቲን ፊደሎች እና አማረኛ ፊደሎች መሆን ይችላሉ። በቁጥር እስካልጀመሩ ድረስ እና የታገዱ ቃላቶች እስካልሆኑ ድረስ <Link className="text-primary hover:text-off-blue transition-colors" href='/am/docs/the-language#የአጻጻፍ-ሁኔታዎች'>የአጻጻፍ ሁኔታዎች</Link> ላይ እንደተገለጸው።
+
+## ነገሮችን መሰየም
+
+ሁሉም መለያ በቀጥታ የሆነ ነገር እስካልሰጠነው ድረስ ያ ስም የያዘው ነገር `ባዶ` ይሆናል። `ባዶ` በ አሃዱ በዛ መለያ ውስጥ ምንም እንደሌለ ያመላክታል።
+
+```ahadu
+መለያ ስም;
+መለያ ሌላ_ስም = ባዶ; // [!code highlight]
+```
+እዚህ ጋ ባዶን ሌላ_ስም ስም ብዬ እየሰየምኩ ነው። አሁን ላይ ሁለቱም ስምም ሆነ ሌላ_ስም ባዶ ናቸው።
+
+```ahadu
+መለያ ስም = 10; // [!code highlight]
+አውጣ ስም; // 10 ብሎ ያወጣል።
+```
+
+# የመለያ አይነቶች
+
+በ አሃዱ ውስጥ ሁለት አይነት መለያዎች አሉ: ውስጣዊ መለያዎች እና ውጪያዊ መለያዎች
+
+## ውስጣዊ መለያዎች
+ውስጣዊ መለያዎች በ <Link className="text-primary hover:text-off-blue transition-colors" href='/am/docs/the-language/block-statements-and-grouping#block-statements'>አጥር</Link> እይታ ውስጥ የተሰየሙ መለያዎች ሲሆኑ ውስጣዊ መለያዎችን ማግኘት የሚቻለው በዛው በተሰየሙበት አጥር ውስጥ ብቻ ነው።
+
+## ውጪያዊ መለያዎች
+ውጪያዊ መለያዎች ከማንኛውም <Link className="text-primary hover:text-off-blue transition-colors" href='/am/docs/the-language/block-statements-and-grouping#block-statements'>አጥር</Link> ውጪ የተሰየሙ መለያዎች ሲሆኑ ውጪያዊ መለያዎችን ከ የትኛውም እይታ ውስጥ ማግኘት ይቻላል።
+

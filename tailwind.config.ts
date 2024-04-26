@@ -112,6 +112,9 @@ const config = {
       fontFamily: {
         ia: ["iaWriterMono", "monospace"],
       },
+      fontSize: {
+        md: ["1rem", "1.55rem"]
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

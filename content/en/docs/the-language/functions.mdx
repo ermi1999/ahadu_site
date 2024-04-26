@@ -1,0 +1,48 @@
+---
+title: Functions
+description: A function is a block of organized code that is used to perform a single task.
+---
+
+# Function definition
+
+You can define a function with comma separated arguments (parameters) or without an argument.
+
+```ahadu
+ተግባር functionName(args) {
+    // function body
+}
+```
+
+functionName is the name of your function. args are parameters (arguments) that the function expects. function body is the body of the function.
+
+## Returning from functions
+
+a function by default returns `ባዶ` (nil) value, but you can return a value using `መልስ`.
+```ahadu
+ተግባር add(num1, num2) {
+    መልስ num1 + num2;
+}
+```
+this function adds the two numbers that are passed as an argument and returns their result.
+
+# Function calls
+
+Functions are useless if we can't call them, so we can call a function like
+
+```ahadu
+ተግባር add(num1, num2) {
+    መልስ num1 + num2;
+}
+
+መለያ result = add(1, 2); // 1 + 2 = 3 // [!code highlight]
+አውጣ result; // will print 3
+```
+here i am calling the add function with 1 and 2 as an argument and storing the return value in result variable. the function expects 2 arguments if instead i had passed 1 or 0 arguments an error will occure.
+
+```ahadu
+ተግባር add(num1, num2) {
+    መልስ num1 + num2;
+}
+
+መለያ result = add(1); // error // [!code error]
+```

@@ -1,0 +1,72 @@
+---
+title: For Statement
+description: A for loop is useful to repeat a block for certain amount of time.
+---
+
+A for loop repeats a block of code while the condition is true. it has the following syntax.
+
+```ahadu
+ለዚህ (variable = expression; condition; increment) {
+    // Block
+}
+```
+
+## For variable
+
+In the variable section you can declare a new variable
+
+```ahadu
+ለዚህ (መለያ ሀ = 0; condition; increment) {
+    // Block
+}
+```
+
+you could use an already declared variable and update its value
+
+```ahadu
+መለያ ሀ; // [!code highlight]
+ለዚህ (ሀ = 0; condition; increment) {
+    // Block
+}
+```
+
+or you can leave it empty. but make sure to include the semicolon to indicate that it is the end of declaration section.
+
+```ahadu
+ለዚህ (; condition; increment) {
+    // Block
+}
+```
+
+## For condition
+
+A for condition is useful to set up a loop breaking condition. which means the loop will only run while the condition section is true.
+
+<Warning>
+  leaving the condition empty will cause an infinite loop. so only leave the
+  condition empty when you want an infinite loop.
+</Warning>
+
+```ahadu
+ለዚህ (መለያ ሀ = 0; ሀ < 10; increment) {
+    // Block
+}
+```
+
+this for loop runs while ሀ is less than 10.
+
+<Info>
+  If you don't know how many times the loop should run, it is best practice to use the<Link className="text-primary hover:text-off-blue transition-colors" href="/en/docs/the-language/while-statement"> while </Link> loop.
+</Info>
+
+## For increment
+
+A for increment will be executed after each iteration which will allow you to update a value a after each iteration.
+
+```ahadu
+ለዚህ (መለያ ሀ = 0; ሀ < 10; ሀ = ሀ + 1) {
+    // Block
+}
+```
+
+the above example will increment ሀ after each iteration, which means this for loop will run 10 times.

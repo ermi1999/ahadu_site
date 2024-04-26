@@ -30,6 +30,18 @@ export const sidebarNavConfigEnglish: DocsConfig = {
           href: "/en/docs/the-language/block-statements-and-grouping",
         },
         {
+          title: "For statement",
+          href: "/en/docs/the-language/for-statement",
+        },
+        {
+          title: "While statement",
+          href: "/en/docs/the-language/while-statement"
+        },
+        {
+          title: "Operators",
+          href: "/en/docs/the-language/operators"
+        },
+        {
           title: "Functions",
           href: "/en/docs/the-language/functions",
         },
@@ -58,7 +70,7 @@ export const sidebarNavConfigAmharic: DocsConfig = {
         },
         {
           title: "አሃዱን መጫን",
-          href: "/en/docs/installation",
+          href: "/am/docs/installation",
         },
       ],
     },
@@ -66,20 +78,24 @@ export const sidebarNavConfigAmharic: DocsConfig = {
       title: "መመሪያዎች",
       items: [
         {
+          title: "መግቢያ",
+          href: "/am/docs/the-language"
+        },
+        {
           title: "መለያዎች",
-          href: "/en/docs/variables",
+          href: "/am/docs/the-language/variables",
         },
         {
           title: "ተግባሮች",
-          href: "/en/docs/functions",
+          href: "/am/docs/the-language/functions",
         },
         {
           title: "ክፍሎች",
-          href: "/en/docs/classes",
+          href: "/am/docs/the-language/classes",
         },
         {
           title: "አብረው የተሰሩ ተግባሮች",
-          href: "/en/docs/built-in-functions",
+          href: "/am/docs/the-language/built-in-functions",
         },
       ],
     },

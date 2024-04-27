@@ -75,7 +75,7 @@ export const sidebarNavConfigAmharic: DocsConfig = {
       ],
     },
     {
-      title: "መመሪያዎች",
+      title: "ቋንቋው",
       items: [
         {
           title: "መግቢያ",
@@ -84,6 +84,22 @@ export const sidebarNavConfigAmharic: DocsConfig = {
         {
           title: "መለያዎች",
           href: "/am/docs/the-language/variables",
+        },
+        {
+          title: "ማጣመር እና ማጠር",
+          href: "/am/docs/the-language/block-statements-and-grouping",
+        },
+        {
+          title: "ለዚህ",
+          href: "/am/docs/the-language/for-statement",
+        },
+        {
+          title: "እስከ",
+          href: "/am/docs/the-language/while-statement"
+        },
+        {
+          title: "ኦፕሬተሮች",
+          href: "/am/docs/the-language/operators"
         },
         {
           title: "ተግባሮች",
@@ -100,5 +116,5 @@ export const sidebarNavConfigAmharic: DocsConfig = {
       ],
     },
   ],
-  defaultValues: ["መጀመሪያ", "መመሪያዎች"],
+  defaultValues: ["መጀመሪያ", "ቋንቋው"],
 };

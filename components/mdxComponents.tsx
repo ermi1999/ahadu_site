@@ -14,7 +14,7 @@ import Link from "next/link";
 import Warning from "@/components/warning";
 import Optional from "@/components/optional";
 import Info from "@/components/info";
-import ReservedWordsTable from "@/app/reservedWords";
+import ReservedWordsTable from "./reservedWords";
 
 interface MdxProps {
   code: string;

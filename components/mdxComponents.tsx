@@ -118,7 +118,8 @@ const components = {
       {...props}
     />
   ),
-  Image,
+  // @ts-ignore
+  Image: ({className, ...props}: componentProps) => <Image {...props} unoptimized objectFit="cover" className={cn("mt-4", className)}/>,
   Link,
   Warning,
   Optional,

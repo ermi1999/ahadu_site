@@ -10,6 +10,7 @@ import {
   sidebarNavConfigEnglish,
 } from "@/config/docs";
 import { BiMenuAltLeft } from "react-icons/bi";
+import { lato, noto } from "@/lib/fonts";
 
 interface NavbarProps {
   lang: string;
@@ -49,7 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, page }) => {
               className="mr-2"
             />
             <span className="text-xl text-foreground hidden md:flex">
-              {lang == "am" ? "አሀዱ" : "Ahadu"}
+              {lang == "am" ? <span className={noto.className}>አሀዱ</span> : <span className={lato.className}>Ahadu</span>}
             </span>
           </Link>
         </div>

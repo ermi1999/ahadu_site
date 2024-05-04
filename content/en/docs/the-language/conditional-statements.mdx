@@ -1,0 +1,51 @@
+---
+title: Conditional Statements
+description: Conditional statements allow us to control the flow of our program.
+---
+
+# If else statements
+
+the if else statements are used to perform different actions based on different conditions.
+
+
+- use <Link className="text-primary hover:text-off-blue transition-colors" href='/en/docs/the-language/conditional-statements#if-statement'>ከሆነ</Link> to specify a block of code to be executed, if a specified condition is true
+- use <Link className="text-primary hover:text-off-blue transition-colors" href='/en/docs/the-language/conditional-statements#else-statement'>ካልሆነ</Link> to specify a block of code to be executed, if the same condition is false
+
+## If statements
+
+Use the `ከሆነ` statement to specify a block of ahadu code to be executed if a condition is true.
+
+```ahadu
+ከሆነ (condition) {
+    // block of code to be executed if the condition in true
+}
+```
+where condition is an expression that need to result in true (እውነት) or false (ሀሰት). any positive number will result in true (እውነት) and any negative number will result in false and also Nil (ባዶ) and false (ሀሰት) also result in false so the code in the block will not be executed.
+
+```ahadu
+ከሆነ (እውነት) {
+    አውጣ "this will be executed.";
+}
+
+ከሆነ (ሀሰት) {
+    አውጣ "This will not be executed.";
+}
+```
+
+## Else statement
+
+Use the else statement to specify a block of code to be executed if the condition is false.
+
+```ahadu
+ከሆነ (ሀሰት) {
+    አውጣ "This will not be executed.";
+} ካልሆነ {
+    አውጣ "this will be executed.";
+}
+
+ከሆነ (እውነት) {
+    አውጣ "this will be executed.";
+} ካልሆነ {
+    አውጣ "This will not be executed.";
+}
+```

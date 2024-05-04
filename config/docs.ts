@@ -30,6 +30,10 @@ export const sidebarNavConfigEnglish: DocsConfig = {
           href: "/en/docs/the-language/block-statements-and-grouping",
         },
         {
+          title: "Conditional Statements",
+          href: "/en/docs/the-language/conditional-statements"
+        },
+        {
           title: "For statement",
           href: "/en/docs/the-language/for-statement",
         },
@@ -48,10 +52,6 @@ export const sidebarNavConfigEnglish: DocsConfig = {
         {
           title: "Classes",
           href: "/en/docs/the-language/classes",
-        },
-        {
-          title: "Built in functions",
-          href: "/en/docs/the-language/built-in-functions",
         },
       ],
     },
@@ -90,6 +90,10 @@ export const sidebarNavConfigAmharic: DocsConfig = {
           href: "/am/docs/the-language/block-statements-and-grouping",
         },
         {
+          title: "ሁኔታዊ ገለጻዎች",
+          href: "/am/docs/the-language/conditional-statements"
+        },
+        {
           title: "ለዚህ",
           href: "/am/docs/the-language/for-statement",
         },
@@ -108,11 +112,7 @@ export const sidebarNavConfigAmharic: DocsConfig = {
         {
           title: "ክፍሎች",
           href: "/am/docs/the-language/classes",
-        },
-        {
-          title: "አብረው የተሰሩ ተግባሮች",
-          href: "/am/docs/the-language/built-in-functions",
-        },
+        }
       ],
     },
   ],

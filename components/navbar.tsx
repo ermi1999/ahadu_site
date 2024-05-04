@@ -11,6 +11,7 @@ import {
 } from "@/config/docs";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { lato, noto } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 
 interface NavbarProps {
   lang: string;
@@ -50,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, page }) => {
               className="mr-2"
             />
             <span className="text-xl text-foreground hidden md:flex">
-              {lang == "am" ? <span className={noto.className}>አሀዱ</span> : <span className={lato.className}>Ahadu</span>}
+              {lang == "am" ? "አሀዱ" : "Ahadu"}
             </span>
           </Link>
         </div>
@@ -58,16 +59,16 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, page }) => {
           {lang == "am" ? (
             <Link
               href="/en"
-              className="hover:text-primary font-semibold transition-colors"
+              className={cn("hover:text-primary font-semibold transition-colors", lato.className)}
             >
               English
             </Link>
           ) : (
             <Link
               href="/am"
-              className="hover:text-primary font-semibold transition-colors"
+              className={cn("hover:text-primary font-semibold transition-colors", noto.className)}
             >
-              Amharic
+                አማርኛ
             </Link>
           )}
           <Separator orientation="vertical" className="h-[20%]" />

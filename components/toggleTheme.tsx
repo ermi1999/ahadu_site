@@ -11,16 +11,17 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import Image from "next/image";
+import { useMounted } from "@/hooks/use-mounted";
 
 interface ToggleThemeProps {
   lang: string;
 }
 
 export function ModeToggle({ lang }: ToggleThemeProps) {
+  const mounted = useMounted()
   const { setTheme } = useTheme();
 
-  return (
+  return mounted ? (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button className="bg-transparent h-7 px-0 hover:bg-transparent hover:text-primary focus-visible:ring-0 focus-visible:ring-offset-0 transition-colors">
@@ -47,5 +48,5 @@ export function ModeToggle({ lang }: ToggleThemeProps) {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  ) : null;
 }
